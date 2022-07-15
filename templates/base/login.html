@@ -1,0 +1,33 @@
+{% extends 'base/navbar.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="static/base/styles/register.css">
+<title>Login</title>
+{% endblock head %}
+{% block body %}
+<div class="main-container">
+    <div class="signup-container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="name-container">
+            <label for="fname">Full Name:</label><br>
+            <input class="fullname-input" type="text" id="fname" name="fname" ><br>
+            </div>
+            <div class="password-container">
+            <label for="password">Password:</label><br>
+            <input  class="password-input"type="password" id="password" name="password" ><br>
+            </div>
+            
+            <div class="button-container">
+            <button class="signup-button" type="submit">login</button>
+            </div>
+        </form>
+        
+        <div class="login-container">
+        <p class="login-text" > Don't Have A Account! Register here</p><br>
+        <button class="login-here-button" type="button" onclick='location.href="register"'>Sign up</button>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+

@@ -1,0 +1,39 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    width: 600px;
+    height: 700px;
+    
+}
+.name-container,.password-container,.button-container,.password1-container,.login-container,.email-container {
+
+    padding-top: 20px;
+    color: white;
+    font-size: 18px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.fullname-input, .password-input,.password1-input, .email-input {
+    width: 90%;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(222, 222, 222);
+    border: none;
+
+}
+
+.signup-button,.login-here-button {
+    background-color: blueviolet;
+    color: white;
+    border-color: white;
+    border-style: solid;
+    font-size: 19px;
+    padding: 10px 12px 10px 12px;
+}
