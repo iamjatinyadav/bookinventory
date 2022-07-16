@@ -33,5 +33,32 @@ def handlesignup(request):
     else:
         return HttpResponse('404 - Not Found')
 
-def login(request):
+def userlogin(request):
     return render(request, 'base/login.html')
+
+def handlelogin(request):
+    if request.method == 'POST':
+        username = request.POST["fname"]
+        password = request.POST["password"]
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Successfully Logged In")
+            return redirect('home')
+        else:
+            messages.error(request, "Invaild credentials, Please try again")
+            return redirect('login')
+    
+    return HttpResponse('404 - Not Found') 
+
+
+def handlelogout(request):
+    logout(request)
+    messages.success(request, "Successfully Logout.")
+    return redirect('home')
+
+
+def allstore(request):
+    return render(request, 'base/store.html')

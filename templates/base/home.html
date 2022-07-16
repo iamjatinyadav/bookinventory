@@ -1,14 +1,23 @@
 {% extends 'base/navbar.html' %}
 
 {% block title %} Home {% endblock title %}
-{% block head %}{% endblock head %}
+{% block head %}
+<link rel="stylesheet" href="static/base/styles/home.css">
+{% endblock head %}
 
 {% block body %}
-<div>
+<div class="heading-div">
     <h1>Welcome to Book Inventory Management System</h1>
 </div>
-<div class="button">
-    <button class="login-button" type="button"  onclick='location.href= "login" '>login</button>
-    <button class="register-button" type="button"  onclick='location.href= "register"'>Register</button>
- </div>
+{% if user.is_authenticated %}
+    <div class="button-div">
+        <button class="gotostore-button" type="button"  onclick='location.href= "Stores" '>Go to Store</button>
+    </div>
+{% else %}
+    <div class="button-div">
+        <button class="login-button" type="button"  onclick='location.href= "login" '>login</button>
+        <button class="register-button" type="button"  onclick='location.href= "Register"'>Register</button>
+    </div>
+{% endif %}
+
 {% endblock body %}

@@ -1,9 +1,10 @@
-.heading-div,.button-div {
+.addstore-container {
     text-align: center;
     vertical-align: center;
 }
 
-.login-button, .register-button, .gotostore-button {
+.addstore-button {
+    margin-top: 10px;
     background-color: white;
     color: rgb(195, 43, 226);
     border-color: rgb(195, 43, 226);
